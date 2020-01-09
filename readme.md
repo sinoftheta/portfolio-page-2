@@ -1,6 +1,6 @@
 # Relic Content Dev Team React Boilerplate
 
-Updated 1/7/2020
+Version 1.0 - 1/8/2020
 
 ## Frameworks & Tools Used
 - Webpack               - Javascript Bundler
