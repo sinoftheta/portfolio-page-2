@@ -1,4 +1,6 @@
 // TEST ACTION //
-export const testDispatcher1 = () => ({ type: 'TEST1'});
+export const iterateCollatz = () => ({ type: 'ITER_COLLATZ'});
 
-export const testDispatcher2 = (val) => ({ type: 'TEST2', val: val});
+export const addCollatz = (val) => ({ type: 'ADD_COLLATZ', val: val});
+
+export const iterateOEIS = () => ({ type: 'ITER_OEIS'});

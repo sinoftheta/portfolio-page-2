@@ -2,6 +2,7 @@
 // REACT //
 import React from 'react';
 import { render } from 'react-dom';
+import { HashRouter } from 'react-router-dom'
 
 // REDUX //
 import { Provider } from 'react-redux';
@@ -16,7 +17,9 @@ import App from './App.js';
 
 render( 
     <Provider store={store}>
-        <App/>
+        <HashRouter>
+            <App/>
+        </HashRouter>
     </Provider>,
     document.getElementById('app')
 );

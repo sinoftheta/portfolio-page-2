@@ -4,7 +4,13 @@ import React, { Component } from 'react';
 // REDUX //
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {testDispatcher1, testDispatcher2} from './redux/actions/index.js';
+
+// COMPONENTS //
+import { Route, Redirect, Switch, NavLink} from 'react-router-dom';
+
+// VIEWS/COMPOONENTS //
+import CollatzDemo from './components/CollatzDemo.js';
+import OEISDemo from './components/OEISDemo.js';
 
 class App extends Component{
     constructor(props){
@@ -14,31 +20,33 @@ class App extends Component{
         return (
             <div> {/* comments inside JSX must be multi-line comments enclosed in curly brackets */}
 
-                <div className={'jumbotron text-center'}> {/* 'jumbotron' and 'text-center' classes are Bootstrap presets */}
-                    <h1>React Redux Bootstrap Demo</h1> 
-                    <p>This is a demo of the 3n+1 problem</p> 
-                </div>
+                {/* header */}
 
-                <div className={'container'}>
 
-                    <div className={'row'}>
-
-                        <div className={'col-sm-4 text-center'}>
-                            <h2>Change the Redux State</h2>
-                            <button className={'btn btn-primary'} onClick={ () => this.props.testDispatcher1() }> Iterate </button>
-                        </div>
-
-                        <div className={'col-sm-4 text-center'}>
-                            <h2>The Redux State:</h2>
-                            <p>{this.props.test}</p>
-                        </div>
-
-                        <div className={'col-sm-4 text-center'}>
-                            <h2>Add to the Redux State</h2>
-                            <button className={'btn btn-primary'} onClick={ () => this.props.testDispatcher2(1) }> Add </button>
+                {/*navbar*/} {/***** could be its own component, but I think its a good idea to have the bar here for simplicity...? */}
+                <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-expand">
+                    <NavLink className={"navbar-brand"} to={'/Collatz'}>React Redux Bootstrap Demo</NavLink>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div className="navbar-nav">
+                            <NavLink className={"nav-item nav-link"} to={'/Collatz'}>Collatz</NavLink>
+                            <NavLink className={"nav-item nav-link"} to={'/OEIS'}>OEIS</NavLink>
                         </div>
                     </div>
-                </div>
+                </nav>
+
+
+
+                <Switch>
+                    <Route path="/" exact render={(route) => <Redirect to={'/Collatz'}/>}/>
+                    <Route path="/Collatz" exact render={() => <CollatzDemo/>}/>
+                    <Route path="/OEIS" exact render={() => <OEISDemo/>}/>
+                    <Route render={() => <Redirect to={'/Collatz'}/>}/> {/* was /Collatz, this might be better?? */}
+                </Switch>
+
+                {/* footer */}
             </div>
         );
     }
@@ -46,12 +54,9 @@ class App extends Component{
 
 
 const mapStateToProps = state => ({
-    test: state.test
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    testDispatcher1,
-    testDispatcher2,
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
