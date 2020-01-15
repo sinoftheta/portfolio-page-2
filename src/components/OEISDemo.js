@@ -36,7 +36,6 @@ class CollatzDemo extends Component{
                                 <p> A({this.props.n}) = {this.props.terms[2]}</p>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
