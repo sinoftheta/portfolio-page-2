@@ -51,5 +51,6 @@ const amountscrolled = () => {
 }
  
 window.onscroll = () =>{
-            document.documentElement.style.setProperty('--cube-keyframe', `-${amountscrolled()}s`);
+            //document.documentElement.style.setProperty('--cube-keyframe', `-${amountscrolled()}s`);
+            document.documentElement.style.setProperty('--cube-keyframe', `-${1}s`);
 }

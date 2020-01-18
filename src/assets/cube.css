@@ -24,14 +24,14 @@
   animation-name: cube-rotate;
   animation-duration: 100s;
   animation-delay: var(--cube-keyframe, 0s);
-  animation-play-state: paused;
+  /*animation-play-state: paused;
   /*
   animation-iteration-count: infinite; actially we prob want this
   animation-direction: alternate-reverse;
   animation-timing-function: ease-in-out;
   */
   
-  transition: animation-delay 1s ease-in-out;
+  /*transition: animation-delay 1s ease-in-out; /*does not work....///*/
   
 }
 @keyframes cube-rotate{
@@ -42,7 +42,7 @@
   20%{
 
     /*bottom*/
-    transform: translateZ(-100px) rotateX(  90deg);
+    transform: translateZ(0x) rotateX(  90deg);
   }
   40%{
     /*right*/
@@ -54,7 +54,7 @@
   }
   80%{
     /*top*/
-    transform: translateZ(-100px) rotateX( -90deg);
+    transform: translateZ(100px) rotateX( -90deg);
   }
   100%{
     /*back*/
