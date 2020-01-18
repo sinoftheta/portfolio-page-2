@@ -9,8 +9,13 @@ import { bindActionCreators } from 'redux';
 import { Route, Redirect, Switch, NavLink} from 'react-router-dom';
 
 // VIEWS/COMPOONENTS //
+import Post from './components/Post.js';
+import Cube from './components/Cube.js';
+
 import CollatzDemo from './components/CollatzDemo.js';
 import OEISDemo from './components/OEISDemo.js';
+
+import content from './content.js';
 
 class App extends Component{
     constructor(props){
@@ -18,35 +23,62 @@ class App extends Component{
     }
     render(){
         return (
-            <div> {/* comments inside JSX must be multi-line comments enclosed in curly brackets */}
+            <div>
 
-                {/* header */}
-
-
-                {/*navbar*/} {/***** could be its own component, but I think its a good idea to have the bar here for simplicity...? */}
+                {/* nav */}
                 <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-expand">
-                    <NavLink className={"navbar-brand"} to={'/Collatz'}>React Redux Bootstrap Demo</NavLink>
+                    <NavLink className={"navbar-brand"} to={'/'}>Ian Band</NavLink>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <NavLink className={"nav-item nav-link"} to={'/Collatz'}>Collatz</NavLink>
-                            <NavLink className={"nav-item nav-link"} to={'/OEIS'}>OEIS</NavLink>
+                            <a className={"nav-item nav-link"} href={`https://github.com/IanBand?tab=repositories`}>Github</a>
+                            <a className={"nav-item nav-link"} href={`https://www.linkedin.com/in/ian-band-b10b58181/`}>Linkedin</a>
+                            <a className={"nav-item nav-link"} href={`www.fook.com`}>Resume</a>
                         </div>
                     </div>
+                    <div></div>
                 </nav>
 
 
-
+                {/* routes */}
                 <Switch>
-                    <Route path="/" exact render={(route) => <Redirect to={'/Collatz'}/>}/>
-                    <Route path="/Collatz" exact render={() => <CollatzDemo/>}/>
-                    <Route path="/OEIS" exact render={() => <OEISDemo/>}/>
-                    <Route render={() => <Redirect to={'/Collatz'}/>}/> {/* was /Collatz, this might be better?? */}
+                    <Route path="/" exact render={(route) => window.scrollTo(0, 0)}/>
+                    
+
+                    {content.map((item, i) =>(
+                            <Route path={`/${item.route}`} exact render={() => {
+                                console.log('scroll to ' + item.title)
+                            }}
+                            key={i}
+                            /> 
+                    ))}
+
+                    <Route render={() => <Redirect to={'/'}/>}/> {/*order of routes matters, catch all has to be last :P */}
                 </Switch>
 
-                {/* footer */}
+                {/* content */}
+
+                {content.map((item, i) => (
+                            item.type == 'post' ?
+                            <Post
+                                key={i}
+                                title={item.title}
+                                link={item.link}
+                                text={item.text}
+                                route={item.route}
+
+                            />
+                            :
+                            <h1 key={i}>
+                                {item.title}
+                            </h1>
+                ))}
+
+                <Cube/>
+
+
             </div>
         );
     }
