@@ -14,10 +14,17 @@ class Post extends Component{
     
     render(){
         return (
-            <div className={'text-center'}> 
-                <h2><NavLink to={`/${this.props.route}`}>{this.props.title}</NavLink></h2>
-                {this.props.src?<img src={this.props.src} alt={this.props.alt}/> : null}
-                <div>{this.props.text}</div>
+            <div className={'container'}> 
+                <h2 className={'p3'}><NavLink to={`/${this.props.route}`}>{this.props.title}</NavLink></h2>
+                {this.props.images? 
+                    <div className={`row align-items-center`}>
+                        {this.props.images.map((image, i) => (
+                            <img key={i} src={image.src} alt={image.alt} className={'img-thumbnail col-sm'}/> 
+                        ))}
+                    </div>
+                    : 
+                    null}
+                <div dangerouslySetInnerHTML={{__html: this.props.text}}></div>
                 {this.props.link? <a href={this.props.link}>github repo</a> : null}
             </div>
         );

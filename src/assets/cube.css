@@ -13,7 +13,8 @@
 }
 
 :root {
-  --cube-keyframe: -50s;
+  --cube-keyframe: 0s;
+  --total-frames: 1000s;
 }
 .cube {
   width: 200px;
@@ -22,13 +23,16 @@
   transform-style: preserve-3d;
   transform: translateZ(-100px);
   animation-name: cube-rotate;
-  animation-duration: 100s;
-  animation-delay: var(--cube-keyframe, 0s);
-  /*animation-play-state: paused;
-  /*
-  animation-iteration-count: infinite; actially we prob want this
-  animation-direction: alternate-reverse;
+  animation-duration: var(--total-frames);
+  animation-delay: var(--cube-keyframe);
+
   animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite; 
+  animation-direction: alternate-reverse;
+  /*animation-play-state: paused;*/
+  /*
+
+  
   */
   
   /*transition: animation-delay 1s ease-in-out; /*does not work....///*/
@@ -37,30 +41,28 @@
 @keyframes cube-rotate{
   0%{
     /*front*/
-    transform: translateZ(-100px) rotateY(   0deg);
+    transform: translateZ(-100px) rotateY(   20deg);
   }
   20%{
 
     /*bottom*/
-    transform: translateZ(0x) rotateX(  90deg);
+    transform: translateZ(-47px) rotateX(  83deg) rotateY(   5deg);
   }
   40%{
     /*right*/
-    transform: translateZ(-100px) rotateY( -90deg);    
+    transform: translateZ(-30px) rotateY( -95deg) rotateX(  -13deg);    
   }
   60%{
     /*left*/
-    transform: translateZ(-100px) rotateY(  90deg);
+    transform: translateZ(-95px) rotateY(  45deg)  rotateX( -45deg);
   }
   80%{
     /*top*/
-    transform: translateZ(100px) rotateX( -90deg);
+    transform: translateZ(-27px) rotateX( 75deg);
   }
   100%{
-    /*back*/
-    /*transform: translateZ(-100px) rotateY(-180deg);
-        /*front*/
-        transform: translateZ(-100px) rotateY(   0deg);
+    /*front*/
+    transform: translateZ(-100px) rotateY(   20deg);
   }
 }
 
@@ -76,7 +78,10 @@
   position: absolute;
   width: 200px;
   height: 200px;
-  border: 2px solid black;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 1px;
+  
   line-height: 200px;
   font-size: 40px;
   font-weight: bold;
@@ -84,12 +89,12 @@
   text-align: center;
 }
 
-.cube__face--front  { background: hsla(  0, 100%, 50%, 0.7); }
-.cube__face--right  { background: hsla( 60, 100%, 50%, 0.7); }
-.cube__face--back   { background: hsla(120, 100%, 50%, 0.7); }
-.cube__face--left   { background: hsla(180, 100%, 50%, 0.7); }
-.cube__face--top    { background: hsla(240, 100%, 50%, 0.7); }
-.cube__face--bottom { background: hsla(300, 100%, 50%, 0.7); }
+.cube__face--front  { }
+.cube__face--right  { }
+.cube__face--back   { }
+.cube__face--left   { }
+.cube__face--top    { }
+.cube__face--bottom { }
 
 .cube__face--front  { transform: rotateY(  0deg) translateZ(100px); }
 .cube__face--right  { transform: rotateY( 90deg) translateZ(100px); }

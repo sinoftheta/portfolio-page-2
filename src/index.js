@@ -27,9 +27,9 @@ render(
     document.getElementById('app')
 );
 
+
+
 //cube scroll rotate logic
-
-
 const getDocHeight = () =>{
     let D = document;
     return Math.max(
@@ -39,18 +39,19 @@ const getDocHeight = () =>{
     )
 }
 
-
+let totalFrames = 1000;
 const amountscrolled = () => {
     let winheight= window.innerHeight || (document.documentElement || document.body).clientHeight;
     let docheight = getDocHeight();
     let scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
     let trackLength = docheight - winheight;
-    let pctScrolled = Math.floor(scrollTop/trackLength * 100); // gets percentage scrolled (ie: 80 or NaN if tracklength == 0)
+    let pctScrolled = Math.floor(scrollTop/trackLength * totalFrames); // gets percentage scrolled (ie: 80 or NaN if tracklength == 0)
     console.log(pctScrolled);
     return pctScrolled;
 }
- 
+
+document.documentElement.style.setProperty('--total-frames', `${totalFrames}s`);
 window.onscroll = () =>{
             //document.documentElement.style.setProperty('--cube-keyframe', `-${amountscrolled()}s`);
-            document.documentElement.style.setProperty('--cube-keyframe', `-${1}s`);
+            document.documentElement.style.setProperty('--cube-keyframe', `-${amountscrolled()}s`);
 }

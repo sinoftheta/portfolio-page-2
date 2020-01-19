@@ -68,10 +68,11 @@ class App extends Component{
                                 link={item.link}
                                 text={item.text}
                                 route={item.route}
+                                images={item.images}
 
                             />
                             :
-                            <h1 key={i}>
+                            <h1 key={i} className={'container p3'}>
                                 {item.title}
                             </h1>
                 ))}
