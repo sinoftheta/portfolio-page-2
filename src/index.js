@@ -46,7 +46,7 @@ const amountscrolled = () => {
     let scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
     let trackLength = docheight - winheight;
     let pctScrolled = Math.floor(scrollTop/trackLength * totalFrames); // gets percentage scrolled (ie: 80 or NaN if tracklength == 0)
-    console.log(pctScrolled);
+    //console.log(pctScrolled);
     return pctScrolled;
 }
 

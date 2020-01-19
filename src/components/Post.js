@@ -14,7 +14,7 @@ class Post extends Component{
     
     render(){
         return (
-            <div className={'container mb-5'}> 
+            <div className={'container mb-5'} id={this.props.id}> 
                 <h2 className={'p3'}><NavLink to={`/${this.props.route}`}>{this.props.title}</NavLink></h2>
                 {this.props.images? 
                     <div className={`row imagetiles ml-1`}>

@@ -35,7 +35,7 @@ class App extends Component{
                         <div className="navbar-nav">
                             <a className={"nav-item nav-link"} href={`https://github.com/IanBand?tab=repositories`}>Github</a>
                             <a className={"nav-item nav-link"} href={`https://www.linkedin.com/in/ian-band-b10b58181/`}>Linkedin</a>
-                            <a className={"nav-item nav-link"} href={`www.fook.com`}>Resume</a>
+                            <a className={"nav-item nav-link"} href={`http://web.engr.oregonstate.edu/~bandi/resume.pdf`}>Resume</a>
                         </div>
                     </div>
                     <div></div>
@@ -49,7 +49,11 @@ class App extends Component{
 
                     {content.map((item, i) =>(
                             <Route path={`/${item.route}`} exact render={() => {
-                                console.log('scroll to ' + item.title)
+                                setTimeout(() => {
+                                    let elem = document.getElementById(`item-${i}`);
+                                    if(elem) elem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                }, 169);
+
                             }}
                             key={i}
                             /> 
@@ -69,10 +73,11 @@ class App extends Component{
                                 text={item.text}
                                 route={item.route}
                                 images={item.images}
+                                id={`item-${i}`}
 
                             />
                             :
-                            <h1 key={i} className={'container p3'}>
+                            <h1 key={i} id={`item-${i}`} className={'container p3'}>
                                 {item.title}
                             </h1>
                 ))}
