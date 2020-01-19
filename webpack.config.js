@@ -40,7 +40,7 @@ module.exports = {
   },
   output: {
     filename: 'main.js',
-    publicPath: '/',
+    publicPath: '', //uhh?
     path: path.resolve(__dirname, 'dist'),
   },
 };
