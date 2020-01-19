@@ -12,7 +12,7 @@ export default [
     {
         type: 'post',
         title: 'Super Tile Clicker',
-        text: `A clone of one of my favorite games, Minesweeper. Written in Java using the Java Swing framework. <br/><br/>This is an ongoing pet project that is planned to have a rich feature set that caters towards competitive players.
+        text: `A clone of one of my favorite games, Minesweeper. Written in Java using the Java Swing framework. <br/><br/>This is an ongoing pet project that is planned to have a rich feature set that caters to competitive players.
 The MinesweeperBoard class pre-populates the board with mines, and replaces up to 8 mines surrounding the players first click coordinates. This allows for a guaranteed "0" first click while also not having to generate an entire board upon the games initial click.
 The MinesweeperBoard class uses a higher order function evalNeighbors() to conditionally apply functions to each of a tiles neighbors. This is used throughout the class from counting the number of mines surrounding a tile to recursively revealing all neighbor tiles.
 This project is meant as a first step into learning how to structure complex games, and as more general experience with object oriented design. `,
