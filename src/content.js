@@ -1,5 +1,12 @@
 import ans_121_cow from "./assets/ans-121-cow.gif";
 import ans_121_egg from "./assets/ans-121-egg.gif";
+import fes_526 from "./assets/fes_526.gif";
+import soil_360_data from "./assets/soil_360_data.PNG";
+import soil_360_pen from "./assets/soil_360_pen.gif";
+import soil_360_ann from "./assets/soil_360_ann.gif";
+import stc1 from "./assets/stc1.gif";
+import stc2 from "./assets/stc2.gif";
+
 
 export default [
     {
@@ -11,7 +18,16 @@ The MinesweeperBoard class uses a higher order function evalNeighbors() to condi
 This project is meant as a first step into learning how to structure complex games, and as more general experience with object oriented design. `,
         link: 'https://github.com/IanBand/super-tile-clicker',
         route: 'SuperTileClicker',
-
+        images: [
+            {
+                src: stc1,
+                alt: 'Minesweeper Gameplay'
+            },
+            {
+                src: stc2,
+                alt: 'Responsive Rendering'
+            }
+        ],
 
     },
     {
@@ -25,6 +41,12 @@ This project is meant as a first step into learning how to structure complex gam
         text: `FES 520 is a small data visualization project written in ReactJS. It uses <a href=" https://www.npmjs.com/package/react-vis">react-vis</a> and <a href="https://www.npmjs.com/package/react-animated-number">react-animated-number</a> to smoothly animate between different years in the dataset. <br> 
             The application reads data from one json file and automatically scales with the number of years supplied, and number of key value pairs in each year. `,
         route: 'FES526',
+        images: [
+            {
+                src: fes_526,
+                alt: 'Interactive Data Visualization'
+            }
+        ],
 
     },
     {
@@ -35,6 +57,20 @@ This project is meant as a first step into learning how to structure complex gam
           The Actions appear as the colorful squares on either side of each Event. Each Action can take the value of a list of Options. For example, some of the Options for the Termination action are Flail, where one would use a flail on the crops, or my personal favorite, "Winter Kill," where one simply lets the crops die over the winter and turn to mulch.
           The Snapshot panel is in the bottom left. This feature allows users to save snapshots of their board states that have a unique URL associated with them. When viewed, the snapshots cannot be edited. Their purpose is for users to be able to share their crop rotations with other students and with the instructor for manual grading.`,
         route: 'SOIL360',
+        images: [
+            {
+                src: soil_360_ann,
+                alt: 'Annual Crop Planner'
+            },
+            {
+                src: soil_360_pen,
+                alt: 'Perennial Crop Planner'
+            },
+            {
+                src: soil_360_data,
+                alt: 'Crop Planner Data Types'
+            }
+        ],
     },
     {
         type: 'post',
@@ -52,5 +88,10 @@ This project is meant as a first step into learning how to structure complex gam
             }
         ],
 
-    }
+    },
+    /*{ //should I include this???
+        type: 'section',
+        title: 'OEIS',
+        route: 'OEIS',
+    },*/
 ]

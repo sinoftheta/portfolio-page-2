@@ -14,12 +14,12 @@ class Post extends Component{
     
     render(){
         return (
-            <div className={'container'}> 
+            <div className={'container mb-5'}> 
                 <h2 className={'p3'}><NavLink to={`/${this.props.route}`}>{this.props.title}</NavLink></h2>
                 {this.props.images? 
-                    <div className={`row align-items-center`}>
+                    <div className={`row imagetiles ml-1`}>
                         {this.props.images.map((image, i) => (
-                            <img key={i} src={image.src} alt={image.alt} className={'img-thumbnail col-sm'}/> 
+                            <img key={i} src={image.src} alt={image.alt} className={'img-thumbnail col-lg-3 col-md-3 col-sm-3 col-xs-6 '}/> 
                         ))}
                     </div>
                     : 

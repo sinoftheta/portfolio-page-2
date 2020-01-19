@@ -13,14 +13,28 @@ class Post extends Component{
     }
     render(){
         return (
-            <div className="scene">
-                <div className="cube">
-                    <div className="cube__face cube__face--front"></div>
-                    <div className="cube__face cube__face--back"></div>
-                    <div className="cube__face cube__face--right"></div>
-                    <div className="cube__face cube__face--left"></div>
-                    <div className="cube__face cube__face--top"></div>
-                    <div className="cube__face cube__face--bottom"></div>
+            <div>
+                <div className="scene" style={{zIndex: -1}}>
+                    <div className="cube">
+                        <div className="cube__face cube__face--front"></div>
+                        <div className="cube__face cube__face--back"></div>
+                        <div className="cube__face cube__face--right"></div>
+                        <div className="cube__face cube__face--left"></div>
+                        <div className="cube__face cube__face--top"></div>
+                        <div className="cube__face cube__face--bottom"></div>
+                    </div>
+                </div>
+
+                {/*Second cube for outline */}
+                <div className="scene">
+                    <div className="cube outline">
+                        <div className="cube__face cube__face--front"></div>
+                        <div className="cube__face cube__face--back"></div>
+                        <div className="cube__face cube__face--right"></div>
+                        <div className="cube__face cube__face--left"></div>
+                        <div className="cube__face cube__face--top"></div>
+                        <div className="cube__face cube__face--bottom"></div>
+                    </div>
                 </div>
             </div>
         );

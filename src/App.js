@@ -58,8 +58,8 @@ class App extends Component{
                     <Route render={() => <Redirect to={'/'}/>}/> {/*order of routes matters, catch all has to be last :P */}
                 </Switch>
 
-                {/* content */}
 
+                {/* content */}
                 {content.map((item, i) => (
                             item.type == 'post' ?
                             <Post
@@ -78,7 +78,6 @@ class App extends Component{
                 ))}
 
                 <Cube/>
-
 
             </div>
         );
