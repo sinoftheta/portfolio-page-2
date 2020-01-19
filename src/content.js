@@ -19,6 +19,7 @@ This project is meant as a first step into learning how to structure complex gam
         link: 'https://github.com/IanBand/super-tile-clicker',
         route: 'SuperTileClicker',
         images: [
+
             {
                 src: stc1,
                 alt: 'Minesweeper Gameplay'
@@ -26,7 +27,8 @@ This project is meant as a first step into learning how to structure complex gam
             {
                 src: stc2,
                 alt: 'Responsive Rendering'
-            }
+            },
+
         ],
 
     },
@@ -59,12 +61,12 @@ This project is meant as a first step into learning how to structure complex gam
         route: 'SOIL360',
         images: [
             {
-                src: soil_360_ann,
-                alt: 'Annual Crop Planner'
-            },
-            {
                 src: soil_360_pen,
                 alt: 'Perennial Crop Planner'
+            },
+            {
+                src: soil_360_ann,
+                alt: 'Annual Crop Planner'
             },
             {
                 src: soil_360_data,
