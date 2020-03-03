@@ -1,4 +1,4 @@
-# Relic Content Dev Team React Boilerplate
+# Portfolio Page
 
 Version 1.0 - 1/8/2020
 
@@ -7,7 +7,7 @@ Version 1.0 - 1/8/2020
 - Webpack Dev Server    - Development Tool 
 - React                 - UI Framework
 - Redux                 - Global State Container
-- Bootstrap             - CSS framework
+- Bootstrap             - CSS framework (tod: update ro react-bootstrap)
 - Yarn                  - Package Manager
 - Jest (future)         - Unit Testing
 
